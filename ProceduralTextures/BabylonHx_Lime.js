@@ -20,7 +20,7 @@ ApplicationMain.create = function() {
 	ApplicationMain.preloader.create(ApplicationMain.config);
 	var urls = [];
 	var types = [];
-	urls.push("assets/img/graygrad.jpg");
+	urls.push("../assets/img/graygrad.jpg");
 	types.push("IMAGE");
 	if(ApplicationMain.config.assetsPrefix != null) {
 		var _g1 = 0;
@@ -119,7 +119,7 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
-	id = "assets/img/graygrad.jpg";
+	id = "../assets/img/graygrad.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	var assetsPrefix = null;
