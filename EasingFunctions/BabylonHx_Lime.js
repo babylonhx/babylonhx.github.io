@@ -119,7 +119,7 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
-	id = "assets/img/graygrad.jpg";
+	id = "../assets/img/graygrad.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	var assetsPrefix = null;
@@ -31818,7 +31818,7 @@ var samples_EasingFunctions = function(scene) {
 	var light = new com_babylonhx_lights_PointLight("Omni",new com_babylonhx_math_Vector3(0,100,100),scene);
 	var camera = new com_babylonhx_cameras_ArcRotateCamera("Camera",0,0.8,100,new com_babylonhx_math_Vector3(0,0,0),scene);
 	camera.attachControl(this,true);
-	new com_babylonhx_layer_Layer("background","assets/img/graygrad.jpg",scene,true);
+	new com_babylonhx_layer_Layer("background","../assets/img/graygrad.jpg",scene,true);
 	var torus = com_babylonhx_mesh_Mesh.CreateTorus("torus",8,2,32,scene,false);
 	torus.position.x = 25;
 	torus.position.z = 30;
