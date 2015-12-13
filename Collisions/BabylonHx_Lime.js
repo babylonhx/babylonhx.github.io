@@ -31673,7 +31673,7 @@ var samples_Collisions = function(scene) {
 	ground.rotation = new com_babylonhx_math_Vector3(Math.PI / 2,0,0);
 	var box = com_babylonhx_mesh_Mesh.CreateBox("crate",2,scene);
 	box.set_material(new com_babylonhx_materials_StandardMaterial("Mat",scene));
-	(js_Boot.__cast(box.get_material() , com_babylonhx_materials_StandardMaterial)).diffuseTexture = new com_babylonhx_materials_textures_Texture("assets/img/crate.png",scene);
+	(js_Boot.__cast(box.get_material() , com_babylonhx_materials_StandardMaterial)).diffuseTexture = new com_babylonhx_materials_textures_Texture("../assets/img/crate.png",scene);
 	(js_Boot.__cast(box.get_material() , com_babylonhx_materials_StandardMaterial)).diffuseTexture.hasAlpha = true;
 	box.position = new com_babylonhx_math_Vector3(5,-9,-10);
 	camera.setTarget(box.position);
