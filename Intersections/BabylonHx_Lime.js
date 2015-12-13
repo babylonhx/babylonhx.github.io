@@ -119,7 +119,7 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
-	id = "assets/img/graygrad.jpg";
+	id = "../assets/img/graygrad.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	var assetsPrefix = null;
@@ -31760,7 +31760,7 @@ lime_utils__$UInt8Array_UInt8Array_$Impl_$.toString = function(this1) {
 var samples_Intersections = function(scene) {
 	var camera = new com_babylonhx_cameras_ArcRotateCamera("Camera",1,0.8,70,new com_babylonhx_math_Vector3(5,0,0),scene);
 	camera.attachControl(this,true);
-	new com_babylonhx_layer_Layer("background","assets/img/graygrad.jpg",scene,true);
+	new com_babylonhx_layer_Layer("background","../assets/img/graygrad.jpg",scene,true);
 	var matPlan = new com_babylonhx_materials_StandardMaterial("matPlan1",scene);
 	matPlan.backFaceCulling = false;
 	matPlan.emissiveColor = new com_babylonhx_math_Color3(0.2,1,0.2);
