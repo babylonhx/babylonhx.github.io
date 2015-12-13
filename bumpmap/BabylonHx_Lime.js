@@ -24,7 +24,7 @@ ApplicationMain.create = function() {
 	types.push("IMAGE");
 	urls.push("../assets/img/graygrad.jpg");
 	types.push("IMAGE");
-	urls.push("../assets/img/NormalMap.jpg");
+	urls.push("../assets/img/normalMap.jpg");
 	types.push("IMAGE");
 	urls.push("../assets/img/skybox/README.TXT");
 	types.push("TEXT");
@@ -143,7 +143,7 @@ var DefaultAssetLibrary = function() {
 	id = "../assets/img/graygrad.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "../assets/img/NormalMap.jpg";
+	id = "../assets/img/normalMap.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	id = "../assets/img/skybox/README.TXT";
@@ -31808,7 +31808,7 @@ var samples_BumpMap = function(scene) {
 	var light = new com_babylonhx_lights_PointLight("Omni",new com_babylonhx_math_Vector3(-60,60,80),scene);
 	var material = new com_babylonhx_materials_StandardMaterial("kosh",scene);
 	material.diffuseTexture = new com_babylonhx_materials_textures_Texture("../assets/img/DiffuseMap.jpg",scene);
-	material.bumpTexture = new com_babylonhx_materials_textures_Texture("../assets/img/NormalMap.jpg",scene);
+	material.bumpTexture = new com_babylonhx_materials_textures_Texture("../assets/img/normalMap.jpg",scene);
 	var box = com_babylonhx_mesh_Mesh.CreateBox("box",4.0,scene);
 	box.set_material(material);
 	camera.setPosition(new com_babylonhx_math_Vector3(0,10,5));
