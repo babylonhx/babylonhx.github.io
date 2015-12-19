@@ -7752,14 +7752,14 @@ com_babylonhx_materials_Effect.prototype = {
 			callbackFn(com_babylonhx_materials_ShadersStore.Shaders.get(vertex + "VertexShader"));
 			return;
 		}
-		com_babylonhx_tools_Tools.LoadFile("assets/shaders/" + vertex + ".vertex.fx",callbackFn,null,"text");
+		com_babylonhx_tools_Tools.LoadFile("../assets/shaders/" + vertex + ".vertex.fx",callbackFn,null,"text");
 	}
 	,_loadFragmentShader: function(fragment,callbackFn) {
 		if(com_babylonhx_materials_ShadersStore.Shaders.exists(fragment + "PixelShader")) {
 			callbackFn(com_babylonhx_materials_ShadersStore.Shaders.get(fragment + "PixelShader"));
 			return;
 		}
-		com_babylonhx_tools_Tools.LoadFile("assets/shaders/" + fragment + ".fragment.fx",callbackFn,null,"text");
+		com_babylonhx_tools_Tools.LoadFile("../assets/shaders/" + fragment + ".fragment.fx",callbackFn,null,"text");
 	}
 	,_prepareEffect: function(vertexSourceCode,fragmentSourceCode,attributesNames,defines,fallbacks) {
 		try {
@@ -21290,7 +21290,7 @@ js_html_compat_Uint8Array._subarray = function(start,end) {
 };
 var samples_Materials = function(scene) {
 	var light = new com_babylonhx_lights_PointLight("Omni",new com_babylonhx_math_Vector3(-60,60,80),scene);
-	new com_babylonhx_layer_Layer("background","assets/img/graygrad.jpg",scene,true);
+	new com_babylonhx_layer_Layer("background","../assets/img/graygrad.jpg",scene,true);
 	var camera = new com_babylonhx_cameras_WebVRFreeCamera("Camera",new com_babylonhx_math_Vector3(-28.49048517839588,4.508635031371328,9.713741018284448),scene);
 	camera.attachControl(this,false);
 	var sphere1 = com_babylonhx_mesh_Mesh.CreateSphere("Sphere1",10,9.0,scene);
@@ -21312,18 +21312,18 @@ var samples_Materials = function(scene) {
 	materialSphere2.diffuseColor = new com_babylonhx_math_Color3(1,0,0);
 	materialSphere2.alpha = 0.3;
 	var materialSphere3 = new com_babylonhx_materials_StandardMaterial("texture3",scene);
-	materialSphere3.diffuseTexture = new com_babylonhx_materials_textures_Texture("assets/img/misc.jpg",scene);
+	materialSphere3.diffuseTexture = new com_babylonhx_materials_textures_Texture("../assets/img/misc.jpg",scene);
 	var materialSphere4 = new com_babylonhx_materials_StandardMaterial("texture4",scene);
-	materialSphere4.diffuseTexture = new com_babylonhx_materials_textures_Texture("assets/img/misc.jpg",scene);
+	materialSphere4.diffuseTexture = new com_babylonhx_materials_textures_Texture("../assets/img/misc.jpg",scene);
 	var materialSphere5 = new com_babylonhx_materials_StandardMaterial("texture5",scene);
-	materialSphere5.diffuseTexture = new com_babylonhx_materials_textures_Texture("assets/img/tree.png",scene);
+	materialSphere5.diffuseTexture = new com_babylonhx_materials_textures_Texture("../assets/img/tree.png",scene);
 	materialSphere5.diffuseTexture.hasAlpha = true;
 	var materialSphere6 = new com_babylonhx_materials_StandardMaterial("texture6",scene);
-	materialSphere6.diffuseTexture = new com_babylonhx_materials_textures_Texture("assets/img/tree.png",scene);
+	materialSphere6.diffuseTexture = new com_babylonhx_materials_textures_Texture("../assets/img/tree.png",scene);
 	materialSphere6.diffuseTexture.hasAlpha = true;
 	materialSphere6.backFaceCulling = false;
 	var materialPlane = new com_babylonhx_materials_StandardMaterial("texturePlane",scene);
-	materialPlane.diffuseTexture = new com_babylonhx_materials_textures_Texture("assets/img/grass.jpg",scene);
+	materialPlane.diffuseTexture = new com_babylonhx_materials_textures_Texture("../assets/img/grass.jpg",scene);
 	materialPlane.backFaceCulling = false;
 	var materialSphere1 = new com_babylonhx_materials_StandardMaterial("texture1",scene);
 	materialSphere1.set_wireframe(true);
@@ -21386,7 +21386,7 @@ com_babylonhx_Engine.TEXTURETYPE_FLOAT = 1;
 com_babylonhx_Engine.Version = "2.0.0";
 com_babylonhx_Engine.Epsilon = 0.001;
 com_babylonhx_Engine.CollisionsEpsilon = 0.001;
-com_babylonhx_Engine.ShadersRepository = "assets/shaders/";
+com_babylonhx_Engine.ShadersRepository = "../assets/shaders/";
 com_babylonhx_Engine.mouseDown = [];
 com_babylonhx_Engine.mouseUp = [];
 com_babylonhx_Engine.mouseMove = [];
