@@ -20,28 +20,28 @@ ApplicationMain.create = function() {
 	ApplicationMain.preloader.create(ApplicationMain.config);
 	var urls = [];
 	var types = [];
-	urls.push("../assets/audio/cosmosis.mp3");
+	urls.push(".../assets/audio/cosmosis.mp3");
 	types.push("MUSIC");
-	urls.push("../assets/fonts/OpenSans-Semibold-webfont.eot");
+	urls.push(".../assets/fonts/OpenSans-Semibold-webfont.eot");
 	types.push("BINARY");
-	urls.push("../assets/fonts/OpenSansRegular.eot");
+	urls.push(".../assets/fonts/OpenSansRegular.eot");
 	types.push("BINARY");
-	urls.push("../assets/fonts/OpenSansRegular.ttf");
+	urls.push(".../assets/fonts/OpenSansRegular.ttf");
 	types.push("FONT");
-	urls.push("../assets/fonts/OpenSansRegular.woff");
+	urls.push(".../assets/fonts/OpenSansRegular.woff");
 	types.push("BINARY");
-	urls.push("../assets/img/grained_uv.png");
+	urls.push(".../assets/img/grained_uv.png");
 	types.push("IMAGE");
-	urls.push("../assets/img/metal.png");
+	urls.push(".../assets/img/metal.png");
 	types.push("IMAGE");
-	urls.push("../assets/img/square.jpg");
+	urls.push(".../assets/img/square.jpg");
 	types.push("IMAGE");
-	if(ApplicationMain.config.../assetsPrefix != null) {
+	if(ApplicationMain.config.assetsPrefix != null) {
 		var _g1 = 0;
 		var _g = urls.length;
 		while(_g1 < _g) {
 			var i = _g1++;
-			if(types[i] != "FONT") urls[i] = ApplicationMain.config.../assetsPrefix + urls[i];
+			if(types[i] != "FONT") urls[i] = ApplicationMain.config.assetsPrefix + urls[i];
 		}
 	}
 	ApplicationMain.preloader.load(urls,types);
@@ -133,37 +133,37 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
-	id = "../assets/audio/cosmosis.mp3";
+	id = ".../assets/audio/cosmosis.mp3";
 	this.path.set(id,id);
 	this.type.set(id,"MUSIC");
-	id = "../assets/fonts/OpenSans-Semibold-webfont.eot";
+	id = ".../assets/fonts/OpenSans-Semibold-webfont.eot";
 	this.path.set(id,id);
 	this.type.set(id,"BINARY");
-	id = "../assets/fonts/OpenSansRegular.eot";
+	id = ".../assets/fonts/OpenSansRegular.eot";
 	this.path.set(id,id);
 	this.type.set(id,"BINARY");
-	id = "../assets/fonts/OpenSansRegular.ttf";
-	this.className.set(id,_$_$ASSET_$_$../assets_$fonts_$opensansregular_$ttf);
+	id = ".../assets/fonts/OpenSansRegular.ttf";
+	this.className.set(id,_$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf);
 	this.type.set(id,"FONT");
-	id = "../assets/fonts/OpenSansRegular.woff";
+	id = ".../assets/fonts/OpenSansRegular.woff";
 	this.path.set(id,id);
 	this.type.set(id,"BINARY");
-	id = "../assets/img/grained_uv.png";
+	id = ".../assets/img/grained_uv.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "../assets/img/metal.png";
+	id = ".../assets/img/metal.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = "../assets/img/square.jpg";
+	id = ".../assets/img/square.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	var ../assetsPrefix = null;
-	if(ApplicationMain.config != null && Object.prototype.hasOwnProperty.call(ApplicationMain.config,"../assetsPrefix")) ../assetsPrefix = ApplicationMain.config.../assetsPrefix;
-	if(../assetsPrefix != null) {
+	var assetsPrefix = null;
+	if(ApplicationMain.config != null && Object.prototype.hasOwnProperty.call(ApplicationMain.config,"assetsPrefix")) assetsPrefix = ApplicationMain.config.assetsPrefix;
+	if(assetsPrefix != null) {
 		var $it0 = this.path.keys();
 		while( $it0.hasNext() ) {
 			var k = $it0.next();
-			var value = ../assetsPrefix + this.path.get(k);
+			var value = assetsPrefix + this.path.get(k);
 			this.path.set(k,value);
 		}
 	}
@@ -243,7 +243,7 @@ DefaultAssetLibrary.prototype = $extend(lime_AssetLibrary.prototype,{
 		var promise = new lime_app_Promise();
 		if(this.path.exists(id)) {
 			var request = new lime_net_HTTPRequest();
-			promise.completeWith(request.load(this.path.get(id) + "?" + lime_../assets.cache.version));
+			promise.completeWith(request.load(this.path.get(id) + "?" + lime_Assets.cache.version));
 		} else promise.complete(this.getBytes(id));
 		return promise.future;
 	}
@@ -255,7 +255,7 @@ DefaultAssetLibrary.prototype = $extend(lime_AssetLibrary.prototype,{
 				promise.complete(lime_graphics_Image.fromImageElement(image));
 			};
 			image.onerror = $bind(promise,promise.error);
-			image.src = this.path.get(id) + "?" + lime_../assets.cache.version;
+			image.src = this.path.get(id) + "?" + lime_Assets.cache.version;
 		} else promise.complete(this.getImage(id));
 		return promise.future;
 	}
@@ -263,7 +263,7 @@ DefaultAssetLibrary.prototype = $extend(lime_AssetLibrary.prototype,{
 		var promise = new lime_app_Promise();
 		if(this.path.exists(id)) {
 			var request = new lime_net_HTTPRequest();
-			var future = request.load(this.path.get(id) + "?" + lime_../assets.cache.version);
+			var future = request.load(this.path.get(id) + "?" + lime_Assets.cache.version);
 			future.onProgress(function(progress) {
 				promise.progress(progress);
 			});
@@ -344,15 +344,15 @@ lime_text_Font.prototype = {
 	,__class__: lime_text_Font
 	,__properties__: {get_unitsPerEM:"get_unitsPerEM",get_underlineThickness:"get_underlineThickness",get_underlinePosition:"get_underlinePosition",get_numGlyphs:"get_numGlyphs",get_height:"get_height",get_descender:"get_descender",get_ascender:"get_ascender"}
 };
-var _$_$ASSET_$_$../assets_$fonts_$opensansregular_$ttf = function() {
+var _$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf = function() {
 	lime_text_Font.call(this);
 	this.name = "Open Sans";
 };
-$hxClasses["__ASSET__../assets_fonts_opensansregular_ttf"] = _$_$ASSET_$_$../assets_$fonts_$opensansregular_$ttf;
-_$_$ASSET_$_$../assets_$fonts_$opensansregular_$ttf.__name__ = ["__ASSET__../assets_fonts_opensansregular_ttf"];
-_$_$ASSET_$_$../assets_$fonts_$opensansregular_$ttf.__super__ = lime_text_Font;
-_$_$ASSET_$_$../assets_$fonts_$opensansregular_$ttf.prototype = $extend(lime_text_Font.prototype,{
-	__class__: _$_$ASSET_$_$../assets_$fonts_$opensansregular_$ttf
+$hxClasses["__ASSET__assets_fonts_opensansregular_ttf"] = _$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf;
+_$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf.__name__ = ["__ASSET__assets_fonts_opensansregular_ttf"];
+_$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf.__super__ = lime_text_Font;
+_$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf.prototype = $extend(lime_text_Font.prototype,{
+	__class__: _$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf
 });
 var EReg = function(r,opt) {
 	opt = opt.split("u").join("");
@@ -11482,28 +11482,28 @@ com_babylonhx_tools_Tools.CleanUrl = function(url) {
 com_babylonhx_tools_Tools.LoadFile = function(path,callbackFn,type) {
 	if(type == null) type = "";
 	if(type == "" || type == "text") {
-		if(lime_../assets.exists(path)) {
+		if(lime_Assets.exists(path)) {
 			var callBackFunction;
 			if(callbackFn != null) callBackFunction = function(result) {
 				callbackFn(result);
 			}; else callBackFunction = function(_) {
 			};
-			var future = lime_../assets.loadText(path);
+			var future = lime_Assets.loadText(path);
 			future.onComplete(function(data) {
 				callBackFunction(data);
 			});
 		} else haxe_Log.trace("File '" + path + "' doesn't exist!",{ fileName : "Tools.hx", lineNumber : 471, className : "com.babylonhx.tools.Tools", methodName : "LoadFile"});
-	} else if(lime_../assets.exists(path)) switch(type) {
+	} else if(lime_Assets.exists(path)) switch(type) {
 	case "img":
-		var img = lime_../assets.getImage(path);
+		var img = lime_Assets.getImage(path);
 		var image = new com_babylonhx_utils_Image(img.get_data(),img.width,img.height);
 		if(callbackFn != null) callbackFn(image);
 		break;
 	} else haxe_Log.trace("File '" + path + "' doesn't exist!",{ fileName : "Tools.hx", lineNumber : 512, className : "com.babylonhx.tools.Tools", methodName : "LoadFile"});
 };
 com_babylonhx_tools_Tools.LoadImage = function(url,onload,onerror,db) {
-	if(lime_../assets.exists(url)) {
-		var future = lime_../assets.loadImage(url);
+	if(lime_Assets.exists(url)) {
+		var future = lime_Assets.loadImage(url);
 		future.onComplete(function(img) {
 			var image = new com_babylonhx_utils_Image(img.get_data(),img.width,img.height);
 			onload(image);
@@ -20099,14 +20099,14 @@ com_babylonhx_materials_Effect.prototype = {
 			callbackFn(com_babylonhx_materials_ShadersStore.Shaders.get(vertex + "VertexShader"));
 			return;
 		}
-		com_babylonhx_tools_Tools.LoadFile("../assets/shaders/" + vertex + ".vertex.fx",callbackFn,"text");
+		com_babylonhx_tools_Tools.LoadFile(".../assets/shaders/" + vertex + ".vertex.fx",callbackFn,"text");
 	}
 	,_loadFragmentShader: function(fragment,callbackFn) {
 		if(com_babylonhx_materials_ShadersStore.Shaders.exists(fragment + "PixelShader")) {
 			callbackFn(com_babylonhx_materials_ShadersStore.Shaders.get(fragment + "PixelShader"));
 			return;
 		}
-		com_babylonhx_tools_Tools.LoadFile("../assets/shaders/" + fragment + ".fragment.fx",callbackFn,"text");
+		com_babylonhx_tools_Tools.LoadFile(".../assets/shaders/" + fragment + ".fragment.fx",callbackFn,"text");
 	}
 	,_prepareEffect: function(vertexSourceCode,fragmentSourceCode,attributesNames,defines,fallbacks) {
 		try {
@@ -26125,168 +26125,168 @@ lime_app_Event_$Void_$Void.prototype = {
 	}
 	,__class__: lime_app_Event_$Void_$Void
 };
-var lime_../assets = function() { };
-$hxClasses["lime.../assets"] = lime_../assets;
-lime_../assets.__name__ = ["lime","../assets"];
-lime_../assets.exists = function(id,type) {
-	lime_../assets.initialize();
+var lime_Assets = function() { };
+$hxClasses["lime.Assets"] = lime_Assets;
+lime_Assets.__name__ = ["lime","Assets"];
+lime_Assets.exists = function(id,type) {
+	lime_Assets.initialize();
 	if(type == null) type = "BINARY";
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) return library.exists(symbolName,type);
 	return false;
 };
-lime_../assets.getAudioBuffer = function(id,useCache) {
+lime_Assets.getAudioBuffer = function(id,useCache) {
 	if(useCache == null) useCache = true;
-	lime_../assets.initialize();
-	if(useCache && lime_../assets.cache.enabled && lime_../assets.cache.audio.exists(id)) {
-		var audio = lime_../assets.cache.audio.get(id);
-		if(lime_../assets.isValidAudio(audio)) return audio;
+	lime_Assets.initialize();
+	if(useCache && lime_Assets.cache.enabled && lime_Assets.cache.audio.exists(id)) {
+		var audio = lime_Assets.cache.audio.get(id);
+		if(lime_Assets.isValidAudio(audio)) return audio;
 	}
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
 		if(library.exists(symbolName,"SOUND")) {
 			if(library.isLocal(symbolName,"SOUND")) {
 				var audio1 = library.getAudioBuffer(symbolName);
-				if(useCache && lime_../assets.cache.enabled) lime_../assets.cache.audio.set(id,audio1);
+				if(useCache && lime_Assets.cache.enabled) lime_Assets.cache.audio.set(id,audio1);
 				return audio1;
-			} else haxe_Log.trace("[../assets] Audio asset \"" + id + "\" exists, but only asynchronously",{ fileName : "../assets.hx", lineNumber : 122, className : "lime.../assets", methodName : "getAudioBuffer"});
-		} else haxe_Log.trace("[../assets] There is no audio asset with an ID of \"" + id + "\"",{ fileName : "../assets.hx", lineNumber : 128, className : "lime.../assets", methodName : "getAudioBuffer"});
-	} else haxe_Log.trace("[../assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "../assets.hx", lineNumber : 134, className : "lime.../assets", methodName : "getAudioBuffer"});
+			} else haxe_Log.trace("[Assets] Audio asset \"" + id + "\" exists, but only asynchronously",{ fileName : "Assets.hx", lineNumber : 122, className : "lime.Assets", methodName : "getAudioBuffer"});
+		} else haxe_Log.trace("[Assets] There is no audio asset with an ID of \"" + id + "\"",{ fileName : "Assets.hx", lineNumber : 128, className : "lime.Assets", methodName : "getAudioBuffer"});
+	} else haxe_Log.trace("[Assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "Assets.hx", lineNumber : 134, className : "lime.Assets", methodName : "getAudioBuffer"});
 	return null;
 };
-lime_../assets.getBytes = function(id) {
-	lime_../assets.initialize();
+lime_Assets.getBytes = function(id) {
+	lime_Assets.initialize();
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
 		if(library.exists(symbolName,"BINARY")) {
-			if(library.isLocal(symbolName,"BINARY")) return library.getBytes(symbolName); else haxe_Log.trace("[../assets] String or Bytes asset \"" + id + "\" exists, but only asynchronously",{ fileName : "../assets.hx", lineNumber : 171, className : "lime.../assets", methodName : "getBytes"});
-		} else haxe_Log.trace("[../assets] There is no String or Bytes asset with an ID of \"" + id + "\"",{ fileName : "../assets.hx", lineNumber : 177, className : "lime.../assets", methodName : "getBytes"});
-	} else haxe_Log.trace("[../assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "../assets.hx", lineNumber : 183, className : "lime.../assets", methodName : "getBytes"});
+			if(library.isLocal(symbolName,"BINARY")) return library.getBytes(symbolName); else haxe_Log.trace("[Assets] String or Bytes asset \"" + id + "\" exists, but only asynchronously",{ fileName : "Assets.hx", lineNumber : 171, className : "lime.Assets", methodName : "getBytes"});
+		} else haxe_Log.trace("[Assets] There is no String or Bytes asset with an ID of \"" + id + "\"",{ fileName : "Assets.hx", lineNumber : 177, className : "lime.Assets", methodName : "getBytes"});
+	} else haxe_Log.trace("[Assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "Assets.hx", lineNumber : 183, className : "lime.Assets", methodName : "getBytes"});
 	return null;
 };
-lime_../assets.getFont = function(id,useCache) {
+lime_Assets.getFont = function(id,useCache) {
 	if(useCache == null) useCache = true;
-	lime_../assets.initialize();
-	if(useCache && lime_../assets.cache.enabled && lime_../assets.cache.font.exists(id)) return lime_../assets.cache.font.get(id);
+	lime_Assets.initialize();
+	if(useCache && lime_Assets.cache.enabled && lime_Assets.cache.font.exists(id)) return lime_Assets.cache.font.get(id);
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
 		if(library.exists(symbolName,"FONT")) {
 			if(library.isLocal(symbolName,"FONT")) {
 				var font = library.getFont(symbolName);
-				if(useCache && lime_../assets.cache.enabled) lime_../assets.cache.font.set(id,font);
+				if(useCache && lime_Assets.cache.enabled) lime_Assets.cache.font.set(id,font);
 				return font;
-			} else haxe_Log.trace("[../assets] Font asset \"" + id + "\" exists, but only asynchronously",{ fileName : "../assets.hx", lineNumber : 234, className : "lime.../assets", methodName : "getFont"});
-		} else haxe_Log.trace("[../assets] There is no Font asset with an ID of \"" + id + "\"",{ fileName : "../assets.hx", lineNumber : 240, className : "lime.../assets", methodName : "getFont"});
-	} else haxe_Log.trace("[../assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "../assets.hx", lineNumber : 246, className : "lime.../assets", methodName : "getFont"});
+			} else haxe_Log.trace("[Assets] Font asset \"" + id + "\" exists, but only asynchronously",{ fileName : "Assets.hx", lineNumber : 234, className : "lime.Assets", methodName : "getFont"});
+		} else haxe_Log.trace("[Assets] There is no Font asset with an ID of \"" + id + "\"",{ fileName : "Assets.hx", lineNumber : 240, className : "lime.Assets", methodName : "getFont"});
+	} else haxe_Log.trace("[Assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "Assets.hx", lineNumber : 246, className : "lime.Assets", methodName : "getFont"});
 	return null;
 };
-lime_../assets.getImage = function(id,useCache) {
+lime_Assets.getImage = function(id,useCache) {
 	if(useCache == null) useCache = true;
-	lime_../assets.initialize();
-	if(useCache && lime_../assets.cache.enabled && lime_../assets.cache.image.exists(id)) {
-		var image = lime_../assets.cache.image.get(id);
-		if(lime_../assets.isValidImage(image)) return image;
+	lime_Assets.initialize();
+	if(useCache && lime_Assets.cache.enabled && lime_Assets.cache.image.exists(id)) {
+		var image = lime_Assets.cache.image.get(id);
+		if(lime_Assets.isValidImage(image)) return image;
 	}
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
 		if(library.exists(symbolName,"IMAGE")) {
 			if(library.isLocal(symbolName,"IMAGE")) {
 				var image1 = library.getImage(symbolName);
-				if(useCache && lime_../assets.cache.enabled) lime_../assets.cache.image.set(id,image1);
+				if(useCache && lime_Assets.cache.enabled) lime_Assets.cache.image.set(id,image1);
 				return image1;
-			} else haxe_Log.trace("[../assets] Image asset \"" + id + "\" exists, but only asynchronously",{ fileName : "../assets.hx", lineNumber : 304, className : "lime.../assets", methodName : "getImage"});
-		} else haxe_Log.trace("[../assets] There is no Image asset with an ID of \"" + id + "\"",{ fileName : "../assets.hx", lineNumber : 310, className : "lime.../assets", methodName : "getImage"});
-	} else haxe_Log.trace("[../assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "../assets.hx", lineNumber : 316, className : "lime.../assets", methodName : "getImage"});
+			} else haxe_Log.trace("[Assets] Image asset \"" + id + "\" exists, but only asynchronously",{ fileName : "Assets.hx", lineNumber : 304, className : "lime.Assets", methodName : "getImage"});
+		} else haxe_Log.trace("[Assets] There is no Image asset with an ID of \"" + id + "\"",{ fileName : "Assets.hx", lineNumber : 310, className : "lime.Assets", methodName : "getImage"});
+	} else haxe_Log.trace("[Assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "Assets.hx", lineNumber : 316, className : "lime.Assets", methodName : "getImage"});
 	return null;
 };
-lime_../assets.getLibrary = function(name) {
+lime_Assets.getLibrary = function(name) {
 	if(name == null || name == "") name = "default";
-	return lime_../assets.libraries.get(name);
+	return lime_Assets.libraries.get(name);
 };
-lime_../assets.getPath = function(id) {
-	lime_../assets.initialize();
+lime_Assets.getPath = function(id) {
+	lime_Assets.initialize();
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
-		if(library.exists(symbolName,null)) return library.getPath(symbolName); else haxe_Log.trace("[../assets] There is no asset with an ID of \"" + id + "\"",{ fileName : "../assets.hx", lineNumber : 364, className : "lime.../assets", methodName : "getPath"});
-	} else haxe_Log.trace("[../assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "../assets.hx", lineNumber : 370, className : "lime.../assets", methodName : "getPath"});
+		if(library.exists(symbolName,null)) return library.getPath(symbolName); else haxe_Log.trace("[Assets] There is no asset with an ID of \"" + id + "\"",{ fileName : "Assets.hx", lineNumber : 364, className : "lime.Assets", methodName : "getPath"});
+	} else haxe_Log.trace("[Assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "Assets.hx", lineNumber : 370, className : "lime.Assets", methodName : "getPath"});
 	return null;
 };
-lime_../assets.getText = function(id) {
-	lime_../assets.initialize();
+lime_Assets.getText = function(id) {
+	lime_Assets.initialize();
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
 		if(library.exists(symbolName,"TEXT")) {
-			if(library.isLocal(symbolName,"TEXT")) return library.getText(symbolName); else haxe_Log.trace("[../assets] String asset \"" + id + "\" exists, but only asynchronously",{ fileName : "../assets.hx", lineNumber : 407, className : "lime.../assets", methodName : "getText"});
-		} else haxe_Log.trace("[../assets] There is no String asset with an ID of \"" + id + "\"",{ fileName : "../assets.hx", lineNumber : 413, className : "lime.../assets", methodName : "getText"});
-	} else haxe_Log.trace("[../assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "../assets.hx", lineNumber : 419, className : "lime.../assets", methodName : "getText"});
+			if(library.isLocal(symbolName,"TEXT")) return library.getText(symbolName); else haxe_Log.trace("[Assets] String asset \"" + id + "\" exists, but only asynchronously",{ fileName : "Assets.hx", lineNumber : 407, className : "lime.Assets", methodName : "getText"});
+		} else haxe_Log.trace("[Assets] There is no String asset with an ID of \"" + id + "\"",{ fileName : "Assets.hx", lineNumber : 413, className : "lime.Assets", methodName : "getText"});
+	} else haxe_Log.trace("[Assets] There is no asset library named \"" + libraryName + "\"",{ fileName : "Assets.hx", lineNumber : 419, className : "lime.Assets", methodName : "getText"});
 	return null;
 };
-lime_../assets.initialize = function() {
-	if(!lime_../assets.initialized) {
-		lime_../assets.registerLibrary("default",new DefaultAssetLibrary());
-		lime_../assets.initialized = true;
+lime_Assets.initialize = function() {
+	if(!lime_Assets.initialized) {
+		lime_Assets.registerLibrary("default",new DefaultAssetLibrary());
+		lime_Assets.initialized = true;
 	}
 };
-lime_../assets.isLocal = function(id,type,useCache) {
+lime_Assets.isLocal = function(id,type,useCache) {
 	if(useCache == null) useCache = true;
-	lime_../assets.initialize();
-	if(useCache && lime_../assets.cache.enabled) {
+	lime_Assets.initialize();
+	if(useCache && lime_Assets.cache.enabled) {
 		if(type == "IMAGE" || type == null) {
-			if(lime_../assets.cache.image.exists(id)) return true;
+			if(lime_Assets.cache.image.exists(id)) return true;
 		}
 		if(type == "FONT" || type == null) {
-			if(lime_../assets.cache.font.exists(id)) return true;
+			if(lime_Assets.cache.font.exists(id)) return true;
 		}
 		if(type == "SOUND" || type == "MUSIC" || type == null) {
-			if(lime_../assets.cache.audio.exists(id)) return true;
+			if(lime_Assets.cache.audio.exists(id)) return true;
 		}
 	}
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) return library.isLocal(symbolName,type);
 	return false;
 };
-lime_../assets.isValidAudio = function(buffer) {
+lime_Assets.isValidAudio = function(buffer) {
 	return buffer != null;
 };
-lime_../assets.isValidImage = function(buffer) {
+lime_Assets.isValidImage = function(buffer) {
 	return true;
 };
-lime_../assets.list = function(type) {
-	lime_../assets.initialize();
+lime_Assets.list = function(type) {
+	lime_Assets.initialize();
 	var items = [];
-	var $it0 = lime_../assets.libraries.iterator();
+	var $it0 = lime_Assets.libraries.iterator();
 	while( $it0.hasNext() ) {
 		var library = $it0.next();
 		var libraryItems = library.list(type);
@@ -26294,13 +26294,13 @@ lime_../assets.list = function(type) {
 	}
 	return items;
 };
-lime_../assets.loadAudioBuffer = function(id,useCache) {
+lime_Assets.loadAudioBuffer = function(id,useCache) {
 	if(useCache == null) useCache = true;
-	lime_../assets.initialize();
+	lime_Assets.initialize();
 	var promise = new lime_app_Promise();
-	if(useCache && lime_../assets.cache.enabled && lime_../assets.cache.audio.exists(id)) {
-		var audio = lime_../assets.cache.audio.get(id);
-		if(lime_../assets.isValidAudio(audio)) {
+	if(useCache && lime_Assets.cache.enabled && lime_Assets.cache.audio.exists(id)) {
+		var audio = lime_Assets.cache.audio.get(id);
+		if(lime_Assets.isValidAudio(audio)) {
 			promise.complete(audio);
 			return promise.future;
 		}
@@ -26309,51 +26309,51 @@ lime_../assets.loadAudioBuffer = function(id,useCache) {
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
 		if(library.exists(symbolName,"SOUND")) {
 			var future = library.loadAudioBuffer(symbolName);
-			if(useCache && lime_../assets.cache.enabled) future.onComplete(function(audio1) {
-				lime_../assets.cache.audio.set(id,audio1);
+			if(useCache && lime_Assets.cache.enabled) future.onComplete(function(audio1) {
+				lime_Assets.cache.audio.set(id,audio1);
 			});
 			promise.completeWith(future);
-		} else promise.error("[../assets] There is no audio asset with an ID of \"" + id + "\"");
-	} else promise.error("[../assets] There is no asset library named \"" + libraryName + "\"");
+		} else promise.error("[Assets] There is no audio asset with an ID of \"" + id + "\"");
+	} else promise.error("[Assets] There is no asset library named \"" + libraryName + "\"");
 	return promise.future;
 };
-lime_../assets.loadBytes = function(id) {
-	lime_../assets.initialize();
+lime_Assets.loadBytes = function(id) {
+	lime_Assets.initialize();
 	var promise = new lime_app_Promise();
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
-		if(library.exists(symbolName,"BINARY")) promise.completeWith(library.loadBytes(symbolName)); else promise.error("[../assets] There is no String or Bytes asset with an ID of \"" + id + "\"");
-	} else promise.error("[../assets] There is no asset library named \"" + libraryName + "\"");
+		if(library.exists(symbolName,"BINARY")) promise.completeWith(library.loadBytes(symbolName)); else promise.error("[Assets] There is no String or Bytes asset with an ID of \"" + id + "\"");
+	} else promise.error("[Assets] There is no asset library named \"" + libraryName + "\"");
 	return promise.future;
 };
-lime_../assets.loadFont = function(id) {
-	lime_../assets.initialize();
+lime_Assets.loadFont = function(id) {
+	lime_Assets.initialize();
 	var promise = new lime_app_Promise();
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
-		if(library.exists(symbolName,"FONT")) promise.completeWith(library.loadFont(symbolName)); else promise.error("[../assets] There is no Font asset with an ID of \"" + id + "\"");
-	} else promise.error("[../assets] There is no asset library named \"" + libraryName + "\"");
+		if(library.exists(symbolName,"FONT")) promise.completeWith(library.loadFont(symbolName)); else promise.error("[Assets] There is no Font asset with an ID of \"" + id + "\"");
+	} else promise.error("[Assets] There is no asset library named \"" + libraryName + "\"");
 	return promise.future;
 };
-lime_../assets.loadImage = function(id,useCache) {
+lime_Assets.loadImage = function(id,useCache) {
 	if(useCache == null) useCache = true;
-	lime_../assets.initialize();
+	lime_Assets.initialize();
 	var promise = new lime_app_Promise();
-	if(useCache && lime_../assets.cache.enabled && lime_../assets.cache.image.exists(id)) {
-		var image = lime_../assets.cache.image.get(id);
-		if(lime_../assets.isValidImage(image)) {
+	if(useCache && lime_Assets.cache.enabled && lime_Assets.cache.image.exists(id)) {
+		var image = lime_Assets.cache.image.get(id);
+		if(lime_Assets.isValidImage(image)) {
 			promise.complete(image);
 			return promise.future;
 		}
@@ -26362,64 +26362,64 @@ lime_../assets.loadImage = function(id,useCache) {
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
 		if(library.exists(symbolName,"IMAGE")) {
 			var future = library.loadImage(symbolName);
-			if(useCache && lime_../assets.cache.enabled) future.onComplete(function(image1) {
-				lime_../assets.cache.image.set(id,image1);
+			if(useCache && lime_Assets.cache.enabled) future.onComplete(function(image1) {
+				lime_Assets.cache.image.set(id,image1);
 			});
 			promise.completeWith(future);
-		} else promise.error("[../assets] There is no Image asset with an ID of \"" + id + "\"");
-	} else promise.error("[../assets] There is no asset library named \"" + libraryName + "\"");
+		} else promise.error("[Assets] There is no Image asset with an ID of \"" + id + "\"");
+	} else promise.error("[Assets] There is no asset library named \"" + libraryName + "\"");
 	return promise.future;
 };
-lime_../assets.loadLibrary = function(name) {
-	lime_../assets.initialize();
+lime_Assets.loadLibrary = function(name) {
+	lime_Assets.initialize();
 	var promise = new lime_app_Promise();
-	var data = lime_../assets.getText("libraries/" + name + ".json");
+	var data = lime_Assets.getText("libraries/" + name + ".json");
 	if(data != null && data != "") {
 		var info = JSON.parse(data);
 		var library = Type.createInstance(Type.resolveClass(info.type),info.args);
-		lime_../assets.libraries.set(name,library);
-		library.onChange.add(($_=lime_../assets.onChange,$bind($_,$_.dispatch)));
+		lime_Assets.libraries.set(name,library);
+		library.onChange.add(($_=lime_Assets.onChange,$bind($_,$_.dispatch)));
 		promise.completeWith(library.load());
-	} else promise.error("[../assets] There is no asset library named \"" + name + "\"");
+	} else promise.error("[Assets] There is no asset library named \"" + name + "\"");
 	return promise.future;
 };
-lime_../assets.loadText = function(id) {
-	lime_../assets.initialize();
+lime_Assets.loadText = function(id) {
+	lime_Assets.initialize();
 	var promise = new lime_app_Promise();
 	var libraryName = id.substring(0,id.indexOf(":"));
 	var symbolName;
 	var pos = id.indexOf(":") + 1;
 	symbolName = HxOverrides.substr(id,pos,null);
-	var library = lime_../assets.getLibrary(libraryName);
+	var library = lime_Assets.getLibrary(libraryName);
 	if(library != null) {
-		if(library.exists(symbolName,"TEXT")) promise.completeWith(library.loadText(symbolName)); else promise.error("[../assets] There is no String asset with an ID of \"" + id + "\"");
-	} else promise.error("[../assets] There is no asset library named \"" + libraryName + "\"");
+		if(library.exists(symbolName,"TEXT")) promise.completeWith(library.loadText(symbolName)); else promise.error("[Assets] There is no String asset with an ID of \"" + id + "\"");
+	} else promise.error("[Assets] There is no asset library named \"" + libraryName + "\"");
 	return promise.future;
 };
-lime_../assets.registerLibrary = function(name,library) {
-	if(lime_../assets.libraries.exists(name)) {
-		if(lime_../assets.libraries.get(name) == library) return; else lime_../assets.unloadLibrary(name);
+lime_Assets.registerLibrary = function(name,library) {
+	if(lime_Assets.libraries.exists(name)) {
+		if(lime_Assets.libraries.get(name) == library) return; else lime_Assets.unloadLibrary(name);
 	}
-	if(library != null) library.onChange.add(lime_../assets.library_onChange);
-	lime_../assets.libraries.set(name,library);
+	if(library != null) library.onChange.add(lime_Assets.library_onChange);
+	lime_Assets.libraries.set(name,library);
 };
-lime_../assets.unloadLibrary = function(name) {
-	lime_../assets.initialize();
-	var library = lime_../assets.libraries.get(name);
+lime_Assets.unloadLibrary = function(name) {
+	lime_Assets.initialize();
+	var library = lime_Assets.libraries.get(name);
 	if(library != null) {
-		lime_../assets.cache.clear(name + ":");
-		library.onChange.remove(lime_../assets.library_onChange);
+		lime_Assets.cache.clear(name + ":");
+		library.onChange.remove(lime_Assets.library_onChange);
 		library.unload();
 	}
-	lime_../assets.libraries.remove(name);
+	lime_Assets.libraries.remove(name);
 };
-lime_../assets.library_onChange = function() {
-	lime_../assets.cache.clear();
-	lime_../assets.onChange.dispatch();
+lime_Assets.library_onChange = function() {
+	lime_Assets.cache.clear();
+	lime_Assets.onChange.dispatch();
 };
 var lime__$backend_html5_HTML5Application = function(parent) {
 	this.gameDeviceCache = new haxe_ds_IntMap();
@@ -28297,7 +28297,7 @@ lime_app_Preloader.prototype = {
 	}
 	,load: function(urls,types) {
 		var url = null;
-		var cacheVersion = lime_../assets.cache.version;
+		var cacheVersion = lime_Assets.cache.version;
 		var _g1 = 0;
 		var _g = urls.length;
 		while(_g1 < _g) {
@@ -35362,7 +35362,7 @@ var lime_system_System = function() { };
 $hxClasses["lime.system.System"] = lime_system_System;
 lime_system_System.__name__ = ["lime","system","System"];
 lime_system_System.__properties__ = {get_userDirectory:"get_userDirectory",get_numDisplays:"get_numDisplays",get_fontsDirectory:"get_fontsDirectory",get_endianness:"get_endianness",get_documentsDirectory:"get_documentsDirectory",get_desktopDirectory:"get_desktopDirectory",get_applicationStorageDirectory:"get_applicationStorageDirectory",get_applicationDirectory:"get_applicationDirectory",set_allowScreenTimeout:"set_allowScreenTimeout",get_allowScreenTimeout:"get_allowScreenTimeout"}
-lime_system_System.embed = $hx_exports.lime.embed = function(element,width,height,background,../assetsPrefix) {
+lime_system_System.embed = $hx_exports.lime.embed = function(element,width,height,background,assetsPrefix) {
 	var htmlElement = null;
 	if(typeof(element) == "string") htmlElement = window.document.getElementById(js_Boot.__cast(element , String)); else if(element == null) htmlElement = window.document.createElement("div"); else htmlElement = element;
 	var color = null;
@@ -35376,7 +35376,7 @@ lime_system_System.embed = $hx_exports.lime.embed = function(element,width,heigh
 	ApplicationMain.config.windows[0].element = htmlElement;
 	ApplicationMain.config.windows[0].width = width;
 	ApplicationMain.config.windows[0].height = height;
-	ApplicationMain.config.../assetsPrefix = ../assetsPrefix;
+	ApplicationMain.config.assetsPrefix = assetsPrefix;
 	ApplicationMain.create();
 };
 lime_system_System.exit = function(code) {
@@ -36072,19 +36072,19 @@ lime_utils__$UInt8Array_UInt8Array_$Impl_$.toString = function(this1) {
 	if(this1 != null) return "UInt8Array [byteLength:" + this1.byteLength + ", length:" + this1.length + "]"; else return null;
 };
 var samples_AudioAnalyzer = function(scene) {
-	this.bjs = "../assets/img/metal.png";
-	this.square = "../assets/img/square.jpg";
+	this.bjs = ".../assets/img/metal.png";
+	this.square = ".../assets/img/square.jpg";
 	this.bar = [];
 	var _g = this;
 	var camera = new com_babylonhx_cameras_ArcRotateCamera("Camera",0,0,25,new com_babylonhx_math_Vector3(0,0,0),scene);
 	camera.setTarget(new com_babylonhx_math_Vector3(0,0,0));
 	camera.attachControl();
 	var light = new com_babylonhx_lights_HemisphericLight("light1",new com_babylonhx_math_Vector3(0,1,0),scene);
-	var music = new com_babylonhx_audio_Sound("Music","../assets/audio/cosmosis.mp3",scene,null,{ streaming : true, autoplay : true});
+	var music = new com_babylonhx_audio_Sound("Music",".../assets/audio/cosmosis.mp3",scene,null,{ streaming : true, autoplay : true});
 	this.createRingcubes(20,256,scene);
 	var mball = new com_babylonhx_materials_StandardMaterial("m",scene);
 	mball.backFaceCulling = false;
-	mball.bumpTexture = new com_babylonhx_materials_textures_Texture("../assets/img/grained_uv.png",scene);
+	mball.bumpTexture = new com_babylonhx_materials_textures_Texture(".../assets/img/grained_uv.png",scene);
 	mball.reflectionTexture = new com_babylonhx_materials_textures_Texture(this.bjs,scene);
 	mball.reflectionTexture.level = 0.8;
 	mball.reflectionTexture.coordinatesMode = 1;
@@ -36124,7 +36124,7 @@ samples_AudioAnalyzer.prototype = {
 		var cube;
 		var m1 = new com_babylonhx_materials_StandardMaterial("m",scene);
 		m1.diffuseTexture = new com_babylonhx_materials_textures_Texture(this.square,scene);
-		m1.bumpTexture = new com_babylonhx_materials_textures_Texture("../assets/img/grained_uv.png",scene);
+		m1.bumpTexture = new com_babylonhx_materials_textures_Texture(".../assets/img/grained_uv.png",scene);
 		m1.reflectionTexture = new com_babylonhx_materials_textures_Texture(this.bjs,scene);
 		m1.reflectionTexture.level = 0.8;
 		m1.reflectionTexture.coordinatesMode = 1;
@@ -36219,7 +36219,7 @@ com_babylonhx_Engine.TEXTURETYPE_FLOAT = 1;
 com_babylonhx_Engine.Version = "2.0.0";
 com_babylonhx_Engine.Epsilon = 0.001;
 com_babylonhx_Engine.CollisionsEpsilon = 0.001;
-com_babylonhx_Engine.ShadersRepository = "../assets/shaders/";
+com_babylonhx_Engine.ShadersRepository = ".../assets/shaders/";
 com_babylonhx_Engine.mouseDown = [];
 com_babylonhx_Engine.mouseUp = [];
 com_babylonhx_Engine.mouseMove = [];
@@ -37390,10 +37390,10 @@ haxe_io_FPHelper.i64tmp = (function($this) {
 	return $r;
 }(this));
 js_html_compat_Uint8Array.BYTES_PER_ELEMENT = 1;
-lime_../assets.cache = new lime_AssetCache();
-lime_../assets.libraries = new haxe_ds_StringMap();
-lime_../assets.onChange = new lime_app_Event_$Void_$Void();
-lime_../assets.initialized = false;
+lime_Assets.cache = new lime_AssetCache();
+lime_Assets.libraries = new haxe_ds_StringMap();
+lime_Assets.onChange = new lime_app_Event_$Void_$Void();
+lime_Assets.initialized = false;
 lime__$backend_html5_HTML5Window.windowID = 0;
 lime_app_Preloader.images = new haxe_ds_StringMap();
 lime_app_Preloader.loaders = new haxe_ds_StringMap();
