@@ -20,21 +20,21 @@ ApplicationMain.create = function() {
 	ApplicationMain.preloader.create(ApplicationMain.config);
 	var urls = [];
 	var types = [];
-	urls.push(".../assets/audio/cosmosis.mp3");
+	urls.push("../assets//audio/cosmosis.mp3");
 	types.push("MUSIC");
-	urls.push(".../assets/fonts/OpenSans-Semibold-webfont.eot");
+	urls.push("../assets//fonts/OpenSans-Semibold-webfont.eot");
 	types.push("BINARY");
-	urls.push(".../assets/fonts/OpenSansRegular.eot");
+	urls.push("../assets//fonts/OpenSansRegular.eot");
 	types.push("BINARY");
-	urls.push(".../assets/fonts/OpenSansRegular.ttf");
+	urls.push("../assets//fonts/OpenSansRegular.ttf");
 	types.push("FONT");
-	urls.push(".../assets/fonts/OpenSansRegular.woff");
+	urls.push("../assets//fonts/OpenSansRegular.woff");
 	types.push("BINARY");
-	urls.push(".../assets/img/grained_uv.png");
+	urls.push("../assets//img/grained_uv.png");
 	types.push("IMAGE");
-	urls.push(".../assets/img/metal.png");
+	urls.push("../assets//img/metal.png");
 	types.push("IMAGE");
-	urls.push(".../assets/img/square.jpg");
+	urls.push("../assets//img/square.jpg");
 	types.push("IMAGE");
 	if(ApplicationMain.config.assetsPrefix != null) {
 		var _g1 = 0;
@@ -133,28 +133,28 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
-	id = ".../assets/audio/cosmosis.mp3";
+	id = "../assets//audio/cosmosis.mp3";
 	this.path.set(id,id);
 	this.type.set(id,"MUSIC");
-	id = ".../assets/fonts/OpenSans-Semibold-webfont.eot";
+	id = "../assets//fonts/OpenSans-Semibold-webfont.eot";
 	this.path.set(id,id);
 	this.type.set(id,"BINARY");
-	id = ".../assets/fonts/OpenSansRegular.eot";
+	id = "../assets//fonts/OpenSansRegular.eot";
 	this.path.set(id,id);
 	this.type.set(id,"BINARY");
-	id = ".../assets/fonts/OpenSansRegular.ttf";
+	id = "../assets//fonts/OpenSansRegular.ttf";
 	this.className.set(id,_$_$ASSET_$_$assets_$fonts_$opensansregular_$ttf);
 	this.type.set(id,"FONT");
-	id = ".../assets/fonts/OpenSansRegular.woff";
+	id = "../assets//fonts/OpenSansRegular.woff";
 	this.path.set(id,id);
 	this.type.set(id,"BINARY");
-	id = ".../assets/img/grained_uv.png";
+	id = "../assets//img/grained_uv.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = ".../assets/img/metal.png";
+	id = "../assets//img/metal.png";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
-	id = ".../assets/img/square.jpg";
+	id = "../assets//img/square.jpg";
 	this.path.set(id,id);
 	this.type.set(id,"IMAGE");
 	var assetsPrefix = null;
@@ -20099,14 +20099,14 @@ com_babylonhx_materials_Effect.prototype = {
 			callbackFn(com_babylonhx_materials_ShadersStore.Shaders.get(vertex + "VertexShader"));
 			return;
 		}
-		com_babylonhx_tools_Tools.LoadFile(".../assets/shaders/" + vertex + ".vertex.fx",callbackFn,"text");
+		com_babylonhx_tools_Tools.LoadFile("../assets//shaders/" + vertex + ".vertex.fx",callbackFn,"text");
 	}
 	,_loadFragmentShader: function(fragment,callbackFn) {
 		if(com_babylonhx_materials_ShadersStore.Shaders.exists(fragment + "PixelShader")) {
 			callbackFn(com_babylonhx_materials_ShadersStore.Shaders.get(fragment + "PixelShader"));
 			return;
 		}
-		com_babylonhx_tools_Tools.LoadFile(".../assets/shaders/" + fragment + ".fragment.fx",callbackFn,"text");
+		com_babylonhx_tools_Tools.LoadFile("../assets//shaders/" + fragment + ".fragment.fx",callbackFn,"text");
 	}
 	,_prepareEffect: function(vertexSourceCode,fragmentSourceCode,attributesNames,defines,fallbacks) {
 		try {
@@ -36072,19 +36072,19 @@ lime_utils__$UInt8Array_UInt8Array_$Impl_$.toString = function(this1) {
 	if(this1 != null) return "UInt8Array [byteLength:" + this1.byteLength + ", length:" + this1.length + "]"; else return null;
 };
 var samples_AudioAnalyzer = function(scene) {
-	this.bjs = ".../assets/img/metal.png";
-	this.square = ".../assets/img/square.jpg";
+	this.bjs = "../assets//img/metal.png";
+	this.square = "../assets//img/square.jpg";
 	this.bar = [];
 	var _g = this;
 	var camera = new com_babylonhx_cameras_ArcRotateCamera("Camera",0,0,25,new com_babylonhx_math_Vector3(0,0,0),scene);
 	camera.setTarget(new com_babylonhx_math_Vector3(0,0,0));
 	camera.attachControl();
 	var light = new com_babylonhx_lights_HemisphericLight("light1",new com_babylonhx_math_Vector3(0,1,0),scene);
-	var music = new com_babylonhx_audio_Sound("Music",".../assets/audio/cosmosis.mp3",scene,null,{ streaming : true, autoplay : true});
+	var music = new com_babylonhx_audio_Sound("Music","../assets//audio/cosmosis.mp3",scene,null,{ streaming : true, autoplay : true});
 	this.createRingcubes(20,256,scene);
 	var mball = new com_babylonhx_materials_StandardMaterial("m",scene);
 	mball.backFaceCulling = false;
-	mball.bumpTexture = new com_babylonhx_materials_textures_Texture(".../assets/img/grained_uv.png",scene);
+	mball.bumpTexture = new com_babylonhx_materials_textures_Texture("../assets//img/grained_uv.png",scene);
 	mball.reflectionTexture = new com_babylonhx_materials_textures_Texture(this.bjs,scene);
 	mball.reflectionTexture.level = 0.8;
 	mball.reflectionTexture.coordinatesMode = 1;
@@ -36124,7 +36124,7 @@ samples_AudioAnalyzer.prototype = {
 		var cube;
 		var m1 = new com_babylonhx_materials_StandardMaterial("m",scene);
 		m1.diffuseTexture = new com_babylonhx_materials_textures_Texture(this.square,scene);
-		m1.bumpTexture = new com_babylonhx_materials_textures_Texture(".../assets/img/grained_uv.png",scene);
+		m1.bumpTexture = new com_babylonhx_materials_textures_Texture("../assets//img/grained_uv.png",scene);
 		m1.reflectionTexture = new com_babylonhx_materials_textures_Texture(this.bjs,scene);
 		m1.reflectionTexture.level = 0.8;
 		m1.reflectionTexture.coordinatesMode = 1;
@@ -36219,7 +36219,7 @@ com_babylonhx_Engine.TEXTURETYPE_FLOAT = 1;
 com_babylonhx_Engine.Version = "2.0.0";
 com_babylonhx_Engine.Epsilon = 0.001;
 com_babylonhx_Engine.CollisionsEpsilon = 0.001;
-com_babylonhx_Engine.ShadersRepository = ".../assets/shaders/";
+com_babylonhx_Engine.ShadersRepository = "../assets//shaders/";
 com_babylonhx_Engine.mouseDown = [];
 com_babylonhx_Engine.mouseUp = [];
 com_babylonhx_Engine.mouseMove = [];
