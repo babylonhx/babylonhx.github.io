@@ -20,10 +20,6 @@ ApplicationMain.create = function() {
 	ApplicationMain.preloader.create(ApplicationMain.config);
 	var urls = [];
 	var types = [];
-	urls.push("/assets/models/_1700a.jpg");
-	types.push("IMAGE");
-	urls.push("/assets/models/_1700b.jpg");
-	types.push("IMAGE");
 	urls.push("/assets/models/enterprise.babylon");
 	types.push("TEXT");
 	urls.push("/assets/models/Part.jpg");
@@ -125,12 +121,6 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
-	id = "/assets/models/_1700a.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
-	id = "/assets/models/_1700b.jpg";
-	this.path.set(id,id);
-	this.type.set(id,"IMAGE");
 	id = "/assets/models/enterprise.babylon";
 	this.path.set(id,id);
 	this.type.set(id,"TEXT");
